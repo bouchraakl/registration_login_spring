@@ -9,7 +9,7 @@ import lombok.ToString;
 @Setter
 @AllArgsConstructor
 @ToString
-public class RegisterRequest {
+public class RegisterDTO {
 
     private final String firstName;
 
