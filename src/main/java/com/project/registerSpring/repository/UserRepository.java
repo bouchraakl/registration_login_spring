@@ -6,10 +6,12 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-    @Query("FROM User Where email = :email")
-    public User findByEmail(@Param("email") final String email);
+
+    Optional<User> findByEmail(String email);
 
     @Query("UPDATE User u " +
             "SET u.enabled = TRUE WHERE u.email = ?1")
